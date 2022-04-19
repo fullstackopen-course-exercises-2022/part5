@@ -1,9 +1,18 @@
 import axios from 'axios'
-const baseUrl = '/api/blogs'
+
+const { REACT_APP_BLOG_URL } = process.env
 
 const getAll = () => {
-  const request = axios.get(baseUrl)
+  const request = axios.get(`${REACT_APP_BLOG_URL}/api/blogs`)
   return request.then(response => response.data)
 }
 
-export default { getAll }
+const authHeader = (storageToken) => {
+  return {
+    headers: {
+      Authorization: `Bearer ${storageToken}`
+    }
+  }
+}
+
+export default { getAll, authHeader }
