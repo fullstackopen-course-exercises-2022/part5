@@ -3,8 +3,6 @@ import axios from 'axios'
 const { REACT_APP_BLOG_URL } = process.env
 const user = JSON.parse(window.localStorage.getItem('userInfo'))
 
-console.log(user?.token)
-
 // let token = null
 //
 // const authHeader = (storageToken) => {

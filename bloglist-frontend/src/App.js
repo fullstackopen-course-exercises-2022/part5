@@ -20,7 +20,6 @@ const App = () => {
     if(userInfo) {
       const loggedInUser = JSON.parse(userInfo)
       setUser(loggedInUser)
-      console.log(user?.token)
     }
   }, [])
 
@@ -39,7 +38,7 @@ const App = () => {
     try {
       const payload = await blogService.create(formData)
       setBlogs(blogs.concat(payload))
-      setMessage(`A new blog added to arsenal!`)
+      setMessage(`Added ${formData?.title} to arsenal!`)
       setTimeout(() => {
         setMessage(null)
       }, 5000)
