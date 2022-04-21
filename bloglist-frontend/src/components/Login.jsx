@@ -1,7 +1,6 @@
 import React from 'react'
 
 function Login(props) {
-    console.log(props)
     return (
         <div>
             <h2>Log in to application</h2>
