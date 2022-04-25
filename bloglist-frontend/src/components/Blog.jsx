@@ -11,7 +11,7 @@ const Blog = ({ blog, viewRef, updateBlog, deleteBlog }) => {
         updateBlog(updateLike)
     }
     return (
-        <div>
+        <div className="blog">
             <div>
                 {blog?.title}
             </div>
@@ -20,7 +20,7 @@ const Blog = ({ blog, viewRef, updateBlog, deleteBlog }) => {
                 <div>{blog?.url}</div>
                 <div>{blog?.likes}</div>
                 <button className="btn-like" onClick={update}>Like</button>
-                <button className="btn-like" onClick={() => deleteBlog(blog?.id)}>Delete Blog</button>
+                <button className="btn-delete" onClick={() => deleteBlog(blog?.id)}>Delete Blog</button>
             </Toggle>
         </div>
     )
