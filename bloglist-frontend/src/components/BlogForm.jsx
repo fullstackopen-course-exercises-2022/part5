@@ -28,7 +28,7 @@ function BlogForm({ createBlog }) {
                 <input type="submit" value="Create Blog" />
             </form>
         </div>
-    );
+    )
 }
 
 export default BlogForm

@@ -30,7 +30,7 @@ const App = () => {
       window.localStorage.setItem('userInfo', JSON.stringify(response?.data))
     } catch(err) {
       console.log(err?.response?.data?.msg)
-      setMessage(err?.response?.data?.msg)
+      setMessage(`[ERROR]: ${err?.response?.data?.msg}`)
     }
   }
 
@@ -101,6 +101,7 @@ const App = () => {
     return(
       <div>
         <h2>Blogs</h2>
+        {message && <AlertToast message={message} />}
         {user === null ?
           <Login
             handleLogin={handleLogin}
@@ -111,7 +112,7 @@ const App = () => {
           /> :
             <span>
               {user?.userInfo?.name} logged in <button onClick={handleLogout}>Logout</button><br /><br />
-              {message && <AlertToast message={message} />}
+              {/*{message && <AlertToast message={message} />}*/}
               <Toggle buttonLabel='Reveal Form'>
                 <BlogForm
                     createBlog={createBlog}

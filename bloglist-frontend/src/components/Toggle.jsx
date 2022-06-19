@@ -1,4 +1,4 @@
-import React, { useState, forwardRef, useImperativeHandle } from 'react'
+import React, { useState, useImperativeHandle, forwardRef } from 'react'
 import PropTypes from 'prop-types'
 
 const Toggle = forwardRef((props, ref) => {
@@ -23,11 +23,11 @@ const Toggle = forwardRef((props, ref) => {
                 <button className="close-btn" onClick={() => setRevealForm(false)}>Close</button>
             </div>
         </div>
-    );
+    )
 })
 
 PropTypes.Toggle = {
     buttonLabel: PropTypes.string.isRequired
 }
 
-export default Toggle;
+export default Toggle
